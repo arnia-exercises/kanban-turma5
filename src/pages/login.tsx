@@ -35,11 +35,10 @@ export default function Login () {
       // GUARDEI OS DADOS NO LOCALSTORAGE COM O NOME DA CHAVE TOKEN
       localStorage.setItem('TOKEN', result.token)
 
-      // REDIRECIONAR MEU USUARIO PARA A PAGINA KANBAN
       navigate('/', { replace: true })
     } catch (e) {
       if (e instanceof Error) {
-        toast(e.message)
+        toast.error(e.message)
       }
     }
   }
